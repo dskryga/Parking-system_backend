@@ -50,4 +50,8 @@ public abstract class BaseRepository<T> {
     protected int delete(String sql, Object... args) {
         return jdbcTemplate.update(sql, args);
     }
+
+    protected boolean isExists(String sql, Object... args) {
+        return jdbcTemplate.queryForObject(sql, Boolean.class, args);
+    }
 }

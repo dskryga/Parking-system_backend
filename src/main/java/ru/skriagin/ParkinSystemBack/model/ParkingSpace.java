@@ -8,4 +8,5 @@ import lombok.RequiredArgsConstructor;
 public class ParkingSpace {
     private int id;
     private boolean isAvailable = true;
+    private String number;
 }

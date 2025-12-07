@@ -9,4 +9,5 @@ public interface CarOwnerService {
     CarOwner getById(int id);
     Collection<CarOwner> getByFullName(String fullName);
     CarOwner update(CarOwner carOwner);
+    void delete(int id);
 }

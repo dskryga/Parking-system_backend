@@ -8,7 +8,7 @@ import ru.skriagin.ParkinSystemBack.service.CarOwner.CarOwnerService;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/car-owners")
+@RequestMapping("/car-owner")
 @RequiredArgsConstructor
 public class CarOwnerController {
     private final CarOwnerService service;
@@ -31,5 +31,10 @@ public class CarOwnerController {
     @PutMapping
     public CarOwner update(@RequestBody CarOwner carOwner) {
         return service.update(carOwner);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        service.delete(id);
     }
 }

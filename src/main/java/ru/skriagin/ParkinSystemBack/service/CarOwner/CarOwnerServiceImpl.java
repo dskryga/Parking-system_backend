@@ -31,4 +31,9 @@ public class CarOwnerServiceImpl implements CarOwnerService{
     public CarOwner update(CarOwner carOwner) {
         return repository.update(carOwner);
     }
+
+    @Override
+    public void delete(int id) {
+        repository.delete(id);
+    }
 }
