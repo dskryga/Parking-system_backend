@@ -7,5 +7,5 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ParkingSpace {
     private int id;
-    private boolean isAvailable;
+    private boolean isAvailable = true;
 }
