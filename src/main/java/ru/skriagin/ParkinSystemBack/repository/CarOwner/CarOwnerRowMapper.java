@@ -15,6 +15,7 @@ public class CarOwnerRowMapper implements RowMapper<CarOwner> {
     @Override
     public CarOwner mapRow(ResultSet rs, int rowNum) throws SQLException {
         CarOwner carOwner = new CarOwner();
+        carOwner.setId(rs.getInt("id"));
         carOwner.setFullName(rs.getString("full_name"));
         return carOwner;
     }
