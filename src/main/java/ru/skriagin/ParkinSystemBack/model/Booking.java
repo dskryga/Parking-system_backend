@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 public class Booking {
-    private int id;
-    private Car car;
-    private int spaceId;
+    private long id;
+    private int carId;
+    private int parkingSpaceId;
     private boolean isPaid = false;
 }
