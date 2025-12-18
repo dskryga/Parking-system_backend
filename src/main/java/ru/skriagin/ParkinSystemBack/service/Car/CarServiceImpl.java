@@ -8,6 +8,7 @@ import ru.skriagin.ParkinSystemBack.repository.Car.CarRepository;
 import ru.skriagin.ParkinSystemBack.repository.CarOwner.CarOwnerRepository;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -44,5 +45,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public Collection<Car> searchByNumber(String number) {
         return carRepository.searchByNumber(number);
+    }
+
+    @Override
+    public Collection<Car> getAll() {
+        return carRepository.getAll();
     }
 }

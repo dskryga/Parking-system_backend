@@ -1,5 +1,6 @@
 package ru.skriagin.ParkinSystemBack.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -7,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ParkingSpace {
     private int id;
+    @JsonProperty("isAvailable")
     private boolean isAvailable = true;
     private String number;
 }

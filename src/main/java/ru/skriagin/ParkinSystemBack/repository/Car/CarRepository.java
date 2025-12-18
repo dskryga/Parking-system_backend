@@ -23,6 +23,9 @@ public class CarRepository extends BaseRepository<Car> {
             SELECT cars.id, number, owner_id, o.full_name
             FROM cars LEFT JOIN owners as o on cars.owner_id = o.id
             WHERE cars.number ILIKE ?;""";
+    private static final String GET_ALL_QUERY = """
+            SELECT cars.id, number, owner_id, o.full_name FROM cars
+            LEFT JOIN owners as o on cars.owner_id = o.id;""";
 
     public CarRepository(JdbcTemplate jdbcTemplate, RowMapper<Car> rowMapper) {
         super(jdbcTemplate, rowMapper);
@@ -52,5 +55,9 @@ public class CarRepository extends BaseRepository<Car> {
     public Collection<Car> searchByNumber(String number) {
         String searchPattern = "%" + number + "%";
         return getMany(SEARCH_BY_NUMBER_QUERY, searchPattern);
+    }
+
+    public Collection<Car> getAll() {
+        return getMany(GET_ALL_QUERY);
     }
 }

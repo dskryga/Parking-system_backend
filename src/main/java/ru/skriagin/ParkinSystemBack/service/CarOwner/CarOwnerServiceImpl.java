@@ -6,6 +6,7 @@ import ru.skriagin.ParkinSystemBack.model.CarOwner;
 import ru.skriagin.ParkinSystemBack.repository.CarOwner.CarOwnerRepository;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -35,5 +36,10 @@ public class CarOwnerServiceImpl implements CarOwnerService{
     @Override
     public void delete(int id) {
         repository.delete(id);
+    }
+
+    @Override
+    public Collection<CarOwner> getAll() {
+        return repository.getAll();
     }
 }

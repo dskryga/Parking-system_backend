@@ -9,5 +9,5 @@ public class BookingDetailedResponse {
     private long id;
     private Car car;
     private ParkingSpace parkingSpace;
-    private boolean isPaid;
+    private Boolean isPaid;
 }

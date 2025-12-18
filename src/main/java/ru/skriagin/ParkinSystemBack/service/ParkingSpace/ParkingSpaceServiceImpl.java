@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ru.skriagin.ParkinSystemBack.model.ParkingSpace;
 import ru.skriagin.ParkinSystemBack.repository.ParkingSpace.ParkingSpaceRepository;
 
+import java.util.Collection;
+
 @Service
 @RequiredArgsConstructor
 public class ParkingSpaceServiceImpl implements ParkingSpaceService {
@@ -29,5 +31,10 @@ public class ParkingSpaceServiceImpl implements ParkingSpaceService {
     @Override
     public void delete(int id) {
         repository.delete(id);
+    }
+
+    @Override
+    public Collection<ParkingSpace> getAll() {
+        return repository.getAll();
     }
 }

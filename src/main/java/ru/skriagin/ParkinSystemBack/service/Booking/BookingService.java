@@ -8,7 +8,12 @@ import java.util.Collection;
 public interface BookingService {
     Booking create (Booking booking);
     BookingDetailedResponse getBookingDetailed(long id);
+
+    Collection<BookingDetailedResponse> getAllBookingsDetailed();
+
     Collection<Booking> getAllBookings();
     Booking update(Booking booking);
     void delete(long id);
+
+    void togglePayment(long id, boolean isPaid);
 }

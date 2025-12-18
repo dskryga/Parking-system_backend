@@ -10,4 +10,5 @@ public interface CarService {
     Car update(Car car);
     void delete(int id);
     Collection<Car> searchByNumber(String number);
+    Collection<Car> getAll();
 }
